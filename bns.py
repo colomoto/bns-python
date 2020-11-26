@@ -99,7 +99,7 @@ def attractors(model, length=None):
 
 
 def _as_states(attr, nvar, names):
-    widths = [ 1 for _ in range(nvar) ]
+    widths = [1]*nvar
     with io.StringIO(attr) as stream:
         df = pd.read_fwf(stream, widths=widths, header=None)
         if names:
