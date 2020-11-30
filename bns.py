@@ -33,7 +33,7 @@ def _get_model(obj):
     if "ginsim" in sys.modules:
         ginsim = sys.modules["ginsim"]
         if ginsim.is_ginsim_object(obj):
-            biolqm = import_colomoto_tool("biolqm")
+            biolqm = sys.modules["biolqm"]
             obj = ginsim.to_biolqm(obj)
             return biolqm_import(biolqm, obj)
     assert isinstance(obj, str), "unsupported model input"
